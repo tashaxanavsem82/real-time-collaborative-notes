@@ -10,6 +10,12 @@ const io = socketIo(server);
 app.use(cors());
 app.use(express.json());
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 // Placeholder for routes
 app.get('/', (req, res) => {
   res.send('Welcome to Real-time Collaborative Notes!');
