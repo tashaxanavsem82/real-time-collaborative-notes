@@ -16,16 +16,16 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('A user connected: ' + socket.id); // Include socket ID in the log
+  console.log(`A user connected: ${socket.id}`); // Include socket ID in the log
 
   // Handle note updates
   socket.on('noteUpdate', (data) => {
-    console.log('Note update received:', data); // Added logging for note updates
+    console.log(`Note update received:`, data); // Added logging for note updates
     socket.broadcast.emit('noteUpdate', data);
   });
 
   socket.on('disconnect', () => {
-    console.log('User disconnected: ' + socket.id); // Include socket ID in the log
+    console.log(`User disconnected: ${socket.id}`); // Include socket ID in the log
   });
 });
 
