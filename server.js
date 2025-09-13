@@ -20,6 +20,7 @@ io.on('connection', (socket) => {
 
   // Handle note updates
   socket.on('noteUpdate', (data) => {
+    console.log('Note update received:', data); // Added logging for note updates
     socket.broadcast.emit('noteUpdate', data);
   });
 
