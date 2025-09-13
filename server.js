@@ -13,7 +13,7 @@ app.use(express.json());
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ message: 'Internal Server Error', error: err.message }); // Improved error response
+  res.status(500).json({ message: 'Internal Server Error', error: err.message || 'An unexpected error occurred' }); // Improved error response
 });
 
 // Placeholder for routes
