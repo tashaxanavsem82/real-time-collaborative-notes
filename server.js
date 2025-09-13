@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('A user connected');
+  console.log('A user connected: ' + socket.id); // Include socket ID in the log
 
   // Handle note updates
   socket.on('noteUpdate', (data) => {
@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    console.log('User disconnected');
+    console.log('User disconnected: ' + socket.id); // Include socket ID in the log
   });
 });
 
