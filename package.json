@@ -1,6 +1,6 @@
 {
   "name": "real-time-collaborative-notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A web application for real-time collaborative note-taking.",
   "main": "index.js",
   "scripts": {
